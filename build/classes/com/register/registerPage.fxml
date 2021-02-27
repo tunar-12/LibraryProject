@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="549.0" prefWidth="378.0" styleClass="backDesign" stylesheets="@../css/background.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.register.RegisterPageController">
+   <children>
+      <Label alignment="CENTER" layoutX="79.0" layoutY="-8.0" prefHeight="95.0" prefWidth="236.0" text="Register">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="28.0" layoutY="69.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTF" layoutX="97.0" layoutY="69.0" prefHeight="36.0" prefWidth="246.0" promptText="Your Name" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="119.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Surname" />
+      <TextField fx:id="surnameTF" layoutX="97.0" layoutY="119.0" prefHeight="36.0" prefWidth="246.0" promptText="Your Surname" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="170.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Nick">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTF" layoutX="97.0" layoutY="170.0" prefHeight="36.0" prefWidth="246.0" promptText="Your Nick" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="224.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Password" />
+      <PasswordField fx:id="passwordTF" layoutX="97.0" layoutY="224.0" prefHeight="36.0" prefWidth="246.0" promptText="Your Password" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="273.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Password" />
+      <PasswordField fx:id="confrimTF" layoutX="97.0" layoutY="273.0" prefHeight="36.0" prefWidth="246.0" promptText="Confirm Your Password" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="327.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Mail">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mailTF" layoutX="97.0" layoutY="327.0" prefHeight="36.0" prefWidth="246.0" promptText="Your Mail" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="379.0" prefHeight="36.0" prefWidth="58.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 7;" text="Address">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addressTF" layoutX="97.0" layoutY="379.0" prefHeight="36.0" prefWidth="246.0" promptText="Your Address" />
+      <Button fx:id="cancelBTN" alignment="CENTER" layoutX="57.0" layoutY="457.0" mnemonicParsing="false" onAction="#cancelPr" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: light; -fx-border-color: cc0000; -fx-border-width: 4; -fx-border-radius: 10;" text="Cancel" textFill="#510000">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveBTN" alignment="CENTER" layoutX="207.0" layoutY="457.0" mnemonicParsing="false" onAction="#savePr" prefHeight="51.0" prefWidth="108.0" style="-fx-background-color: light; -fx-border-color: cc0000; -fx-border-width: 4; -fx-border-radius: 10;" text="Save" textFill="#510000">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="warningLbl" layoutX="28.0" layoutY="422.0" prefHeight="28.0" prefWidth="313.0" textFill="#4d0000">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
