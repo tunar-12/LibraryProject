@@ -22,7 +22,8 @@ import javafx.stage.Stage;
 
 
 public class LoginPageController implements Initializable {
-      DaoImpl dao=new DaoImpl();
+    public static String username1 = null;
+    DaoImpl dao=new DaoImpl();
     @FXML
     private Label exceptionLbl;
     @FXML
@@ -78,8 +79,10 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void loginPr(ActionEvent event) {
+        
     String username = nameTxt.getText().trim();
     String password = passTxt.getText().trim();
+    username1=" " + username;
   if(username.equalsIgnoreCase("")||password.equalsIgnoreCase("")){
       exceptionLbl.setText("Butun xanalari doldurun !");
   }else{

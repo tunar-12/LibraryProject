@@ -12,11 +12,7 @@ public class Books {
     private String pageCount;
     private Double amount;
 
-    @Override
-    public String toString() {
-        return "Books{" + "id=" + id + ", name=" + name + ", theme=" + theme + ", author=" + author + ", language=" + language + ", status=" + status + ", pageCount=" + pageCount + ", amount=" + amount + '}';
-    }
-
+   
     public Integer getId() {
         return id;
     }
@@ -82,7 +78,11 @@ public class Books {
     }
     
     
-    
+     @Override
+    public String toString() {
+        return "Books{" + "id=" + id + ", name=" + name + ", theme=" + theme + ", author=" + author + ", language=" + language + ", status=" + status + ", pageCount=" + pageCount + ", amount=" + amount + '}';
+    }
+
     
     
     
