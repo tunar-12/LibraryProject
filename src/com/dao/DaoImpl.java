@@ -142,5 +142,30 @@ public class DaoImpl {
         }
         return allBooks;
     }
+    public boolean addBook(Books newBook){
+        boolean result = false;
+        Connection c= null;
+        PreparedStatement ps = null;
+        String sql = "insert into library_project.books(name,theme,author,page_count,amount,language)\n"
+     + "values ('" +newBook.getName()+ "','" +newBook.getTheme()+ "','" +newBook.getAuthor()+ "','" +newBook.getPageCount()+ "','"+newBook.getAmount()+"','"+newBook.getLanguage()+ "')";
+        
+        c=DBHelper.getConnection();
+        if(c!=null){
+            try{
+                ps =c.prepareStatement(sql);
+                ps.execute();
+                result = true;
+            }catch (Exception e){
+                e.printStackTrace();
+                
+            }finally {
+                Utility.closeAll(c, ps, null);
+            }
+        }else{
+            System.out.println("There isn't any connection");
+        }
+        
+        return result;
+    }
 
 }
