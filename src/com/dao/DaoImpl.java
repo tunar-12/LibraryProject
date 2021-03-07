@@ -112,11 +112,11 @@ public class DaoImpl {
         c = DBHelper.getConnection();
         if (c != null) {
             try {
-                Books book = new Books();
+                
                 ps = c.prepareStatement(sql);
                 rs = ps.executeQuery();
                 while (rs.next()) {
-
+Books book = new Books();
                     book.setId(rs.getInt("id"));
                     book.setName(rs.getString("name"));
                     book.setAmount(rs.getDouble("amount"));

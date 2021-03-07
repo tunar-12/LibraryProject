@@ -28,9 +28,11 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 public class CorePageController implements Initializable {
-
-    private Users user1;
-    Integer selectedId = 0;  // id-ni get etmek ucun bir de buarni anlamdaim cunki eger 0-dirsa secilmisi nece secir?!
+//       LoginPageController login = new LoginPageController();
+//     String  userna = login.username1;
+//    
+//    private Users user1;
+    Integer selectedId = 0;  // id-ni get etmek ucun bir de 
     DaoImpl dao = new DaoImpl();
     @FXML
     private Button logoutBtn;
@@ -114,14 +116,14 @@ public class CorePageController implements Initializable {
         loadLanguageCb();
         loadThemeCb();
         table.setVisible(false);
-
+       welcomeLbl.setText(LoginPageController.username1);
         loadColumn();
         loadRows();
     }
 
-    public void setUser(Users user) {
-        this.user1 = user;
-    }
+//    public void setUser(Users selectedUser) {  
+//        this.user1 = selectedUser;
+//    }
 
     @FXML
     private void logoutPr(ActionEvent event) {
@@ -162,7 +164,7 @@ public class CorePageController implements Initializable {
     @FXML
     private void showPr(ActionEvent event) {
         table.setVisible(true);
-        welcomeLbl.setText(user1.getAddress() + " " + user1.getSurname());
+//        welcomeLbl.setText(user1.getName() + " " + user1.getSurname());
     }
 
     @FXML

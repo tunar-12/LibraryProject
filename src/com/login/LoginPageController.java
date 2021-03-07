@@ -1,7 +1,7 @@
 package com.login;
 
 import com.page.CorePageController;
-        
+
 import com.model.Users;
 import com.dao.DaoImpl;
 import java.net.URL;
@@ -23,8 +23,7 @@ import javafx.stage.Stage;
 
 public class LoginPageController implements Initializable {
 
-//    public static String username1 = null;
- 
+    public static String username1 = null;
     DaoImpl dao = new DaoImpl();
     @FXML
     private Label exceptionLbl;
@@ -57,7 +56,6 @@ public class LoginPageController implements Initializable {
             if (nameTxt.getText().trim().contains(",")) {
                 redTick.setVisible(true);
                 exceptionLbl.setText("Yazinizda vergul isaresi var !");
-
             }
         }
 
@@ -81,10 +79,10 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void loginPr(ActionEvent event) {
-
+   
         String username = nameTxt.getText().trim();
         String password = passTxt.getText().trim();
-//        username1 = " " + username;
+        username1 = " " + username;
         if (username.equalsIgnoreCase("") || password.equalsIgnoreCase("")) {
             exceptionLbl.setText("Butun xanalari doldurun !");
         } else {
@@ -104,8 +102,8 @@ public class LoginPageController implements Initializable {
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-           CorePageController pc = loader.getController();
-                    pc.setUser(user);
+//                    CorePageController pc = loader.getController(); //vre ****
+//                    pc.setUser(user); //erfre ****
                     Stage oldstage = (Stage) loginButton.getScene().getWindow();
                     oldstage.close();
                 } catch (Exception e) {

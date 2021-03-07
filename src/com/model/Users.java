@@ -1,11 +1,10 @@
-
 package com.model;
 
-
 public class Users {
+
     private Integer id;
     private String name;
-        private String surname;
+    private String surname;
     private String username;
     private String password;
     private String mail;
@@ -20,9 +19,9 @@ public class Users {
         this.mail = mail;
         this.address = address;
     }
-    
-    public Users(){
-        
+
+    public Users() {
+
     }
 
     public Integer getId() {
@@ -85,11 +84,4 @@ public class Users {
     public String toString() {
         return "Users{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", username=" + username + ", password=" + password + ", mail=" + mail + ", address=" + address + '}';
     }
-
-    
-    
-    
-    
-   
-    
 }
