@@ -46,7 +46,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="warningLbl" layoutX="100.0" layoutY="529.0" prefHeight="21.0" prefWidth="776.0" style="-fx-border-color: red; -fx-border-radius: 8;" />
+      <Label fx:id="warningLbl" alignment="CENTER" layoutX="100.0" layoutY="529.0" prefHeight="21.0" prefWidth="776.0" style="-fx-border-color: red; -fx-border-radius: 8;" />
       <Label layoutX="566.0" layoutY="30.0" prefHeight="45.0" prefWidth="75.0" text="Welcome, ">
          <font>
             <Font name="System Bold Italic" size="15.0" />
@@ -99,18 +99,18 @@
                            </font>
                         </Label>
                         <ComboBox fx:id="comboBoxNewTheme" layoutX="5.0" layoutY="282.0" prefHeight="29.0" prefWidth="129.0" />
-                        <Label fx:id="saveBtnNew" alignment="CENTER" layoutX="7.0" layoutY="342.0" prefHeight="45.0" prefWidth="68.0" style="-fx-border-color: darkred; -fx-border-radius: 6; -fx-border-width: 3;" text="Save" textFill="#a80000">
-                           <font>
-                              <Font name="System Bold" size="19.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="updateBtnNew" alignment="CENTER" layoutX="87.0" layoutY="342.0" prefHeight="45.0" prefWidth="68.0" style="-fx-border-color: darkred; -fx-border-radius: 6; -fx-border-width: 3;" text="Update" textFill="#a80000">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
                         <Button fx:id="languageAdd" layoutX="140.0" layoutY="202.0" mnemonicParsing="false" onAction="#languageAddBtnPr" prefHeight="21.0" prefWidth="49.0" style="-fx-background-color: white; -fx-border-color: green; -fx-border-radius: 8; -fx-border-width: 2;" text="Add" textFill="#750000" />
                         <Button fx:id="themeAdd" layoutX="140.0" layoutY="280.0" mnemonicParsing="false" onAction="#themeAddBtnPr" prefHeight="21.0" prefWidth="49.0" style="-fx-background-color: white; -fx-border-color: green; -fx-border-radius: 8; -fx-border-width: 2;" text="Add" textFill="#750000" />
+                        <Button fx:id="saveBtnNew" layoutX="3.0" layoutY="335.0" mnemonicParsing="false" onAction="#saveBtnPressedNew" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 8; -fx-border-width: 2;" text="Save">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="updateBtnNew" layoutX="103.0" layoutY="335.0" mnemonicParsing="false" onAction="#updateBtnPressedNew" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 8; -fx-border-width: 2;" text="Update">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
             </content>
@@ -127,7 +127,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="searchTxt" layoutX="65.0" layoutY="11.0" prefHeight="30.0" prefWidth="118.0" promptText="Enter search.." />
+                        <TextField fx:id="searchTxt" layoutX="65.0" layoutY="11.0" onKeyReleased="#searchBtnOnKeyRealised" prefHeight="30.0" prefWidth="118.0" promptText="Enter search.." />
                         <Label alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="37.0" prefWidth="122.0" text="Amount Filter" textFill="#a80000">
                            <font>
                               <Font name="System Bold" size="17.0" />
@@ -145,7 +145,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="maxAmount" layoutX="63.0" layoutY="144.0" prefHeight="30.0" prefWidth="123.0" promptText="Enter max amount.." />
-                        <Button fx:id="filterAmount" layoutX="61.0" layoutY="183.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 2;" text="Filter">
+                        <Button fx:id="filterAmount" layoutX="61.0" layoutY="183.0" mnemonicParsing="false" onAction="#filterAmountPressed" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 2;" text="Filter">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -167,7 +167,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="maxCount" layoutX="61.0" layoutY="298.0" prefHeight="30.0" prefWidth="123.0" promptText="Enter max pages.." />
-                        <Button fx:id="filterPageCount" layoutX="61.0" layoutY="332.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 2;" text="Filter">
+                        <Button fx:id="filterPageCount" layoutX="61.0" layoutY="332.0" mnemonicParsing="false" onAction="#filterPageCount" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 2;" text="Filter">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -203,17 +203,17 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </CheckBox>
-                        <Button fx:id="buyBtnMore" layoutX="45.0" layoutY="66.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 15; -fx-border-width: 2.5;" text="Buy" textFill="RED">
+                        <Button fx:id="buyBtnMore" layoutX="45.0" layoutY="66.0" mnemonicParsing="false" onAction="#buyBtnPressed" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 15; -fx-border-width: 2.5;" text="Buy" textFill="RED">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Button>
-                        <Button fx:id="filterBtnMore" layoutX="103.0" layoutY="182.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 15; -fx-border-width: 2.5;" text="Filter" textFill="RED">
+                        <Button fx:id="filterBtnMore" layoutX="103.0" layoutY="182.0" mnemonicParsing="false" onAction="#filterBtnPressedMore" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 15; -fx-border-width: 2.5;" text="Filter" textFill="RED">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Button>
-                        <Button fx:id="deleteBtnMore" layoutX="45.0" layoutY="295.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 15; -fx-border-width: 2.5;" text="Delete" textFill="RED">
+                        <Button fx:id="deleteBtnMore" layoutX="45.0" layoutY="295.0" mnemonicParsing="false" onAction="#DeleteBtnPressed" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 15; -fx-border-width: 2.5;" text="Delete" textFill="RED">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
